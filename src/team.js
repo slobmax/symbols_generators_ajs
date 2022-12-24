@@ -10,16 +10,9 @@ export default class Team {
     return this.characters;
   }
 
-  toArray() {
-    return Array.from(this.characters);
-  }
-
   * [Symbol.iterator]() {
-    let current = 0;
-    const members = this.toArray();
-    while (current < members.length) {
-      yield members[current];
-      current += 1;
+    for (const member of this.characters) {
+      yield member;
     }
   }
 }
